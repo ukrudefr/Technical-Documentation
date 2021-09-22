@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Technical Documentation</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<nav id="navbar">
+		<header>HTML Documentation</header>
+		<ul>
+			<li><a href="#kopfbereiche_auszeichnen" class="nav-link">Kopfbereiche auszeichnen</a></li>
+			<li><a href="#navi_erstellen" class="nav-link">Navi erstellen</a></li>
+			<li><a href="#der_hauptinhalt_einer_webseite" class="nav-link">Der Hauptinhalt einer Webseite</a></li>
+			<li><a href="#fußbereiche_auszeichnen" class="nav-link">Fußbereiche auszeichnen</a></li>
+			<li><a href="#inhaltliche_abschnitte_erstellen" class="nav-link">Inhaltliche Abschnitte erstellen</a></li>
+			<li><a href="#eigenständige_blöcke" class="nav-link">Eigenständige Blöcke</a></li>
+			<li><a href="#bereiche_mit_zusätzlichen_informationen" class="nav-link">Bereiche mit zusätzlichen Informationen</a></li>
+			<li><a href="#elemente_semantisch_neutral_gruppieren" class="nav-link">Elemente semantisch neutral gruppieren</a></li>
+		</ul>
+	</nav>
+	<main id="main-doc">
+		<section class="main-section" id="kopfbereiche_auszeichnen">
+			<header>Kopfbereiche auszeichnen</header>
+			<article>
+			<p>Das Element &lt;header&gt; kann laut HTML-Spezifikation eine Überschrift,
+				einleitende Inhalte oder auch Navigationshilfen enthalten und ist 
+				für einen solchen Kopfbereich ideal geeignet.</p>
+				<p>Das Element &lt;header&gt; kann auf einer Seite mehrfach vorhanden sein, und dieses kann
+					beim Gestalten per CSS zu unerwünschten Überraschungen führen, zum Beispiel die folgende CSS-Regel:</p>
+					<code>
+						header p {<br>
+							margin: 0;<br>
+						}<br>
+					</code>
+					Der Selektor <span>header p</span> gilt für alle Header-Elemente auf einer Seite, und er wählt alle darin enthaltenen Absätze aus.
+				<p>Während die Namen der Elemente wie &lt;header&gt;, &lt;nav&gt;, &lt;main&gt; und &lt;footer&gt; Teil der HTML-Spezifikation sind, sind die Namen 
+					der Klassen relativ frei wählbar:</p>
+					<code>
+					&lt;header class="site-header"&gt;
+					</code>
+			</article>
+		</section>
+		<section class="main-section" id="navi_erstellen">
+			<header>Navi erstellen</header>
+			<article>
+				<p>
+					Eine Navigation ist eine Sammlung von Hyperlinks, die zu anderen Inhalten der Webseite führt.
+					Das nav- Element ist für wichtige Navigationsblöcke auf einer Seite reserviert und sollte 
+					nicht für jede x-beliebige Linkliste genutzt werden.
+				</p>
+				<p>Genau wie <span>header</span> kann auch <span>nav</span> auf einer Seite mehrfach auftreten, 
+					und daher ist es eine gute Idee, den Navigationsbereichen mit einer Klasse einen zusätzlichen Namen 
+					mit auf den Weg zu geben.</p>
+					<p>
+						Die Navigation ist auf jeder Seite ähnlich, und daher beginnt der Name der Klasse 
+						wie beim Kopfbereich mit der Vorsilbe <span>site-.</span> Mit diesen Klassen im HTML 
+						können Sie die Selektoren im Stylesheet ändern und die Elemente genauer auswählen:</p>
+					<ul>
+						<li>nav wird zu .site-nav</li>
+						<li>nav ul wird zu .site-nav ul</li>
+						<li>nav li wird zu .site-nav li</li>
+						<li>nav a wird zu .site-nav a</li>
+					</ul>
+					<p>Navigationsbereiche können nicht nur in und um einen Kopfbereich auftauchen.
+						Sehr beliebt ist z.B eine Navigation für rechtliche Pflichtlinks im Footer.
+					</p>
+			</article>
+		</section>
+		<section class="main-section" id="der_hauptinhalt_einer_webseite">
+			<header>Der Hauptinhalt einer Webseite</header>
+			<article>
+				<p>
+					Mit dem Element <span>main</span> hat der Hauptinhalt einer Seite bildlichgesprochen 
+					auch einen eigenen Stuhl und kann es sich so auch mal bequem machen.
+				</p>
+				<p>Das Element <span>main</span> hat folgende Charakteristika:</p>
+				<ul>
+					<li>main markiert den Hauptinhalt einer Seite.</li>
+					<li>main darf auf jeder Seite nur ein einziges Mal vorkommen.</li>
+					<li>main enthält normalerweise auf jeder Seite anderen Inhalt.</li>
+				</ul><p>Das Element <span>main</span> kann auch eine Klasse erhalten namens <span>site-content</span>. Außerdem 
+				spendieren Sie dem Inhaltsbereich noch eine ID, die Sie z.B. <span>content</span> nennen:</p>
+				<code>
+					&lt;main class="site-content" id="content"&gt;<br>
+					&lt;h2&gt;Wilkommen&lt;/h2&gt;<br>
+					&lt;/main&gt;
+				</code>
+			</article>
+		</section>
+		<section class="main-section" id="fußbereiche_auszeichnen">
+			<header>Fußbereiche auszeichnen</header>
+			<article>
+				<p>Im Fußbereich einer Webseite finden sich häufig Informationen über die Webseite.
+					In HTML gibt es dazu das Element &lt;footer&gt;.
+				</p>
+				<p>Außer einem Link zurück nach oben stehen im Footer häufig Links zu Impressum
+					und Datenschutzrichtlinien, aber auch andere Inhalte wie Social-Media-Links werden dort gerne untergebracht.
+				</p>
+				<code>
+					&lt;footer&gt;<br>
+					&lt;a href="#top"&gt;Nach oben&gt;
+					&lt;/footer&gt;
+				</code>
+				<p>Das Element &lt;footer&gt; kann genau wie &lt;header&gt; mehrfach auf einer Seite auftauchen und 
+					auch innerhalb von Abschnitten oder Artikeln enthalten sein.
+				</p>
+			</article>
+		</section>
+		<section class="main-section" id="inhaltliche_abschnitte_erstellen">
+			<header>Inhaltliche Abschnitte erstellen</header>
+			<article>
+				<p>Für die inhaltlihe Gliederung einer Webseite oder einzelnen Teilen davon
+					gibt es das Element &lt;section&lt;, auf Deutsch <span>Abschnitt.</span> Das section-Element bezeichnet einen Bereiche
+					einer Webseite oder eine thematische Gruppierung von Inhalten und sollte mit einer Überschrift anfangen.
+				</p>
+				<p>Zum Kennenlernen von &lt;section&gt; unterteilen Sie den Inhaltsbereich der Beispielseite in zwei Abschnitte:</p>
+				<ul>
+					<li>Die bereits vorhandene Einleitung mit der Überschrift <span>Willkommen,</span> zwie Absätzen
+					und einer Liste soll von section-Element mit der Klasse <span>content-intro</span> umgeben.</li>
+					<li>Danach folgt ein zweiter Abschnitt mit der Klasse <span>infoboxen,</span> der mit <span>h2-</span>
+						Überschrift anfängt und im nächsten Abschnitt mit drei <span>article-</span>Elementen gefüllt wird.</li>
+				</ul>
+				<p>Im HTML sieht es so aus:<br> </p>
+					<code>
+					&lt;main class="site-content"&gt;<br>
+						&lt;section class="content-intro"&gt;<br>
+							&lt;h2&gt;Willkommen&lt;/h2&gt;
+				</code>
+			</article>
+		</section>
+		<section class="main-section" id="eigenständige_blöcke">
+			<header><p>Eigenständige Blöcke</p></header>
+			<article>
+				<p>Das Element <span>article</span> dient genau wie <span>section</span> zur Gruppierung von Elementen und zur Unterteilung
+				der Inhalte in Abschnitte.</p>
+				<p>Unterschiede zwischen den beiden:</p>
+				<ul>
+					<li>Ein Artikel ist anders als ein einfacher Abschnitt und stellt in sich eine geschlossene komposition dar.</li>
+					<li>Ein Artikel sollte für sich allein stehen können und auch außerhalb der Webseite, auf der er
+						veröffentlicht wurde, verständlich sein.
+					</li>
+				</ul>
+			</article>
+		</section>
+		<section class="main-section" id="bereiche_mit_zusätzlichen_informationen">
+			<header>Bereiche mit zusätzlichen Informationen</header>
+			<article>
+				<p>Das Element <span>aside</span> ist für Inhalte gedacht, die den umgebenden Text erläutern
+				oder nur marginal mit ihm in Verbindung stehen.</p>
+				<p>Das Element <span>aside</span> kann z.B. für Seitenleisten verwendet werden, die auf
+				großen Bildschirmen häufig rechts oder links neben dem Hauptinhalt stehen.</p>
+				<p>Andere Beispiele für die Verwendung von <span>aside</span> wären:</p>
+				<ul>
+					<li>Blöcke mit Werbung</li>
+					<li>Linklisten, die keine Navi-Bereiche sind</li>
+					<li>Inhalte, die nicht direkt zum Hauptinhalt der Seite gehören</li>
+				</ul>
+			</article>
+		</section>
+		<section class="main-section" id="elemente_semantisch_neutral_gruppieren">
+			<header>Elemente semantisch neutral gruppieren</header>
+			<article>
+				<p>Das <span>div-</span>Element ist ein Container, eine Kiste, eine Box, in der mehrere andere Kisten
+				aufbewahrt werden können, um sie gemeinsam zu gestalten. Das ist bei der täglichen Arbeit an
+				Webseiten oft sehr praktisch. Es dient zur Gruppierung von Elementen, wenn von den semantischen Strukturelemente
+				keines passt</p>
+			</article>
+		</section>
+		<section>
+			<article>
+				<h4>Mehr Informationen über HTML-Elemente zur Strukturierung 
+					von Webseiten finden Sie hier <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure"
+					target="_blank">MDN</a>
+				</h4>
+			</article>
+		</section>
+	</main>
+</body>
+</html>
